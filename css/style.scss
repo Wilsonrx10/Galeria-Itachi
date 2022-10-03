@@ -1,0 +1,182 @@
+// Importação dos arquivos 
+@import 'variables';
+@import 'mixins';
+
+// Reset do html 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+}
+
+body {
+    background-color: $bg-color;
+    color: $text-color
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+    transition: .4s;
+
+    i {
+        color: red;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+// Cabecalho do Website
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    @include container;
+    @include mobile {
+    padding: 1.1rem;
+    }
+
+    &-brand {
+        color: $primary-color;
+        font-size: 3rem;
+    }
+
+    &-navbar ul {
+        height: 100%;
+        @include flex-center;
+        @include mobile {
+        display: none;
+        }
+
+        li {
+            margin: 0 1rem;
+            text-transform: uppercase;
+            font-size: .8rem;
+
+            .active {
+                color: $secondary-color;
+            }
+
+            a {
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    &-social-media {
+        ul {
+            height: 100%;
+            @include flex-center;
+
+            li {
+                margin: 0 1rem;
+
+                a {
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Galeria do Website 
+
+.gallery {
+    @include container;
+    @include flex-center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    @include mobile {
+    flex-direction: column;
+    }
+
+    &-card {
+        @include flex-center;
+        flex-direction: column;
+        color: $primary-color;
+        width: 31%;
+        height: 400px;
+        margin-bottom: 4%;
+        @include mobile {
+        width: 90%;
+        margin-bottom: 6%;
+        }
+        
+        &-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        &-btn {
+            padding: .6rem 2rem;
+            border: 2px solid $primary-color;
+            color: $primary-color;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $primary-color;
+            }
+        }
+    }
+
+    #card-1 {
+        @include bg_img('itachi.png');
+    }
+
+    #card-2 {
+        @include bg_img('itachi01.jpg');
+    }
+
+    #card-3 {
+        @include bg_img('obito.jpg');
+    }
+
+    #card-4 {
+        @include bg_img('itachi-2.jpg');
+    }
+
+    #card-5 {
+        @include bg_img('itachi-6.jpg');
+    }
+
+    #card-6 {
+        @include bg_img('itachi-3.jpg');
+    }
+
+    #card-7 {
+        @include bg_img('itachi-4.jpg');
+    }
+
+
+    #card-8 {
+        @include bg_img('itachi-07.jpg');
+    }
+
+    #card-9 {
+        @include bg_img('itachi-6.jpg');
+    }
+}
+
+// Rodape do Website 
+
+footer {
+    text-align: center;
+    padding-bottom: 2rem;
+
+    span {
+        font-weight: bold;
+        color: $secondary-color;
+    }
+}
